@@ -1,10 +1,39 @@
 .footer
+  padding: 2.4rem 0 1.6rem
+  @extend %u-border-top
+
   //svg example
   svg
     transition: all $transition-timing-base $transition-duration-base
-    width: 25rem
-    height: 25rem
-    fill: $color-gray-scale-darker
+    fill: $color-gray-scale-dark
 
   svg:hover
-    fill: $color-gray-scale-lighter
+    fill: $color-interactive
+
+  +element('lower-box')
+    @extend %u-border-top
+    display: flex
+    justify-content: space-between
+    padding-top: 1.6rem
+    +respond-to('s')
+      flex-direction: column
+      align-items: center
+
+  +element('copy-sign')
+    font-family: 'Arial', sans-serif
+
+  +element('social-box')
+    +respond-to('s')
+      order: -1
+      margin-bottom: 1.6rem
+
+  +element('social-link')
+    &:not(:last-child)
+      margin-right: 4rem
+
+  .nav
+    +respond-to('l')
+      margin-bottom: 4rem
+      margin-top: 9rem
+    +element('logo-box')
+      margin-top: 0

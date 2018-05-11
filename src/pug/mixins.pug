@@ -2,28 +2,72 @@ include head
 include header
 include main-home
 include footer
-
-mixin list
-  ul
-    li foo
-    li bar
-    li baz
+include section-benefits
+include section-commercials
+include section-new-arrivals
+include section-popular-products
+include section-social-proof
+include section-value-proposition
     
-mixin pet(name)
-  li.pet= name
+mixin nav-plus-logo
+  nav.nav
+    ul.nav-list
+      li.nav__item: a(href="javascript:void(0)").nav__link New arrivals
+      li.nav__item: a(href="javascript:void(0)").nav__link Clothing
+      li.nav__item: a(href="javascript:void(0)").nav__link Outlet
+      li.nav__logo-box: a(href="javascript:void(0)").nav__link: +svg('logo')
+      li.nav__item: a(href="javascript:void(0)").nav__link Accessories
+      li.nav__item: a(href="javascript:void(0)").nav__link Footware
+      li.nav__item: a(href="javascript:void(0)").nav__link Brands
+      
+mixin product(name, collection, price, id, recent)
+  .product
+    if recent
+      .product__new New
+    .product__img-container
+      .product__img(id=''+ id +'')
+      .product__img-text-container View more
+    .p= name
+    .label= collection
+    .p.p--bold= price
 
 //- insert svg icons into html
 mixin svg(name)
   
   case name
+    when 'logo'
+      include ../img/svg/logo.svg
+    when 'login'
+      include ../img/svg/login.svg
+    when 'shopping-bag'
+      include ../img/svg/shopping-bag.svg
+    when 'search'
+      include ../img/svg/search.svg
+    when 'free-shipping'
+      include ../img/svg/free-shipping.svg
+    when 'free-shipping'
+      include ../img/svg/free-shipping.svg
+    when '24h-delivery'
+      include ../img/svg/24h-delivery.svg
+    when 'easy-return'
+      include ../img/svg/easy-return.svg
     when 'facebook'
       include ../img/svg/facebook.svg
-  
     when 'twitter'
       include ../img/svg/twitter.svg
-  
     when 'instagram'
       include ../img/svg/instagram.svg
-      
+    when 'the-north-face'
+      include ../img/svg/the-north-face.svg
+    when 'adidas'
+      include ../img/svg/adidas.svg
+    when 'new-balance'
+      include ../img/svg/new-balance.svg
+    when 'carhartt'
+      include ../img/svg/carhartt.svg
+    when 'stussy'
+      include ../img/svg/stussy.svg
+    when 'puma'
+      include ../img/svg/puma.svg
     default
       p don't find this icon

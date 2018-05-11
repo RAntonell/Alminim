@@ -1,1 +1,40 @@
-.navigation
+.nav
+  text-align: center
+  position: relative
+
+  +element('item')
+    display: inline-block
+
+    &:not(:last-child)
+      margin-right: 4rem
+
+  +element('logo-box')
+    display: inline-block
+    margin: 4.8rem 6.4rem 4.8rem 2.4rem
+
+  +element('link')
+    @extend .btn-text
+
+.nav
+  +respond-to('l')
+    margin-bottom: 4rem
+    margin-top: 15rem
+
+  +element('item')
+    +respond-to('m')
+      display: block
+
+    &:not(:last-child)
+      +respond-to('m')
+        margin-right: 0
+        margin-bottom: 3rem
+
+  +element('logo-box')
+    +respond-to('l')
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      Bottom: 4rem
+      margin: 0
+    +respond-to('m')
+      bottom: 29rem

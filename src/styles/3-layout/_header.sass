@@ -1,1 +1,135 @@
 .header
+  +element('icons-box')
+    position: absolute
+    top: 4.8rem
+    right: 5%
+    +respond-to('s')
+      top: 2rem
+
+  +element('icon')
+    display: inline-block
+
+    &:not(:last-child)
+      margin-right: 3.2rem
+
+  +element('search-bar-box')
+    text-align: center
+    position: relative
+    max-width: 48rem
+    margin: 0 auto 3.2rem
+
+
+  +element('search-bar-input')
+    border: .1rem solid $color-gray-scale-light
+    padding: 1.6rem
+    width: 100%
+    @extend .p
+
+  +element('search-bar-button')
+    position: absolute
+    right: 1.6rem
+    top: 50%
+    transform: translateY(-50%)
+    border: none
+    cursor: pointer
+
+  .nav
+
+
+
+//benefits section
+.benefits-box
+  @extend %u-borders
+
+  //not a good practice to have a two level selector...
+  .row
+    display: flex
+    justify-content: space-between
+    +respond-to('m')
+      flex-direction: column
+
+.benefit
+  padding: 3rem 0
+  flex-grow: 1
+  text-align: center
+  display: flex
+  justify-content: center
+  align-items: center
+  position: relative
+
+  &:first-child
+    justify-content: flex-start
+    +respond-to('m')
+      justify-content: center
+
+  &:last-child
+    justify-content: flex-end
+    +respond-to('m')
+      justify-content: center
+
+  &:not(:last-child)
+    &:before
+      content: ''
+      background-color: $color-gray-scale-light
+      width: .1rem
+      height: 7.4rem
+      position: absolute
+      display: block
+      right: 0
+      +respond-to('m')
+        width: 100%
+        height: .1rem
+        bottom: 0
+
+  +element('icon-box')
+    margin-right: 1.6rem
+
+//value-proposition section
+
+.value-proposition
+  position: relative
+
+
+  +element('text')
+    max-width: 32rem
+    padding: 16rem 0
+    +respond-to('m')
+      padding: 6rem 0 56rem
+      text-align: center
+      margin: 0 auto
+
+    //not a good practice to have a two level selector...
+    .p
+      max-width: 30rem
+      margin-bottom: 2.2rem
+
+  +element('img')
+    position: absolute
+    left: 50%
+    right: 0
+    top: 0
+    bottom: 0
+    background:
+      image: url('../img/value-proposition.jpg')
+      size: cover
+      repeat: no-repeat
+    +respond-to('m')
+      left: 0
+      top: 50%
+
+//social-proof section
+.section-social-proof
+  @extend %u-borders
+
+
+.social-proof-icon-box
+  max-width: 44.8rem
+  margin: 0 auto
+  +respond-to(grid)
+    max-width: 112rem
+
+.social-proof-icon
+  display: flex
+  justify-content: center
+  height: 13.1rem
+  align-items: center

@@ -1,3 +1,16 @@
 mixin footer
-  footer
-      p © 2017 
+  footer.footer
+    +nav-plus-logo
+    
+    .row
+      .footer__lower-box
+        .label <span class='footer__copy-sign'>©</span> 2018 - ALMINIM. All right reserved
+        
+        .footer__social-box
+          a(href="javascript:void(0)").footer__social-link
+            +svg('facebook')
+          a(href="javascript:void(0)").footer__social-link
+            +svg('twitter')
+          a(href="javascript:void(0)").footer__social-link
+            +svg('instagram')
+      

@@ -1,43 +1,73 @@
 //fonts
 @font-face
-  font-family: 'Share'
-  src: url('../fonts/Share-Bold.ttf')
-  font-weight: bold
+  font-family: 'Anderson Grotesk'
+  src: url('../fonts/AndersonGrotesk-Ultrabold.otf')
+  font-weight: 800
 
-@import url('https://fonts.googleapis.com/css?family=Libre+Barcode+39+Extended+Text')
+@font-face
+  font-family: 'Anderson Grotesk'
+  src: url('../fonts/AndersonGrotesk-Bold.otf')
+  font-weight: 600
+
+@font-face
+  font-family: 'Anderson Grotesk'
+  src: url('../fonts/AndersonGrotesk.otf')
+  font-weight: 400
+
+@font-face
+  font-family: 'Anderson Grotesk'
+  src: url('../fonts/AndersonGrotesk-Light.otf')
+  font-weight: 200
 
 //typography rules
 body
-  color: $color-gray-scale-darker
   font-family: $font-family-base
 
-.jumbo, .h1, .h2, .h3, .h4
+.p, .label
+  color: $color-gray-scale-dark
+
+.jumbo, .h2
+  color: $color-gray-scale-darker
   font-family: $font-family-heading
+  font-weight: 200
 
 .jumbo
-  font-size: 6.6rem
-  line-height: 7rem
-
-.h1
-  font-size: 5rem
-  line-height: 5.5rem
+  font-size: 9rem
+  line-height: 8.8rem
+  letter-spacing: -.3rem
+  margin-bottom: 1.4rem
 
 .h2
-  font-size: 3.7rem
-  line-height: 4.4rem
+  font-size: 4.5rem
+  line-height: 5.4rem
+  letter-spacing: -.1rem
+  margin-bottom: 8.8rem
 
-.h3
-  font-size: 2.8rem
-  line-height: 3.6rem
-
-.h4
-  font-size: 2.1rem
-  line-height: 2.6rem
+  +modifier('white')
+    @extend %u-commercial-text
+    margin-bottom: 1.6rem
 
 .p
   font-size: $font-size-base
-  line-height: 2.4rem
+  line-height: 2.8rem
+
+  +modifier('bold')
+    color: $color-gray-scale-darker
+    font-weight: 800
 
 .label
   font-size: 1.2rem
-  line-height: 1.8rem
+  line-height: 2.2rem
+
+  +modifier('white')
+    @extend %u-commercial-text
+    margin-bottom: .2rem
+
+%u-text-link
+  font-size: 1.5rem
+  letter-spacing: .1rem
+  font-weight: 600
+
+%u-commercial-text
+  color: white
+  text-shadow: 0 .4rem .8rem rgba(0, 0, 0, .50)

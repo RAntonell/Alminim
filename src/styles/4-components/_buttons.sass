@@ -4,6 +4,7 @@ a
     display: inline-block
     text-decoration: none
     transition: all $transition-duration-base $transition-timing-base
+    @extend %u-text-link
 
   &:active, &:hover
     outline-width: 0
@@ -11,16 +12,29 @@ a
 .btn
   &:link,
   &:visited
-    color: contrast-switch($color-interactive)
+    padding: 2rem 4rem
+    color: #fff
     background-color: $color-interactive
 
   &:hover
     background-color: $color-interactive-dark
 
+  +modifier('white')
+    &:link,
+    &:visited
+      color: $color-interactive
+      background-color: #fff
+      white-space: nowrap
+
+    &:hover
+      background-color: $color-interactive
+      color: white
+
+
 .btn-text
   &:link,
   &:visited
-    color: $color-interactive
+    color: $color-gray-scale-darker
 
   &:hover
-    color: $color-interactive-dark
+    color: $color-interactive

@@ -1,6 +1,24 @@
 mixin header
-  header
-    h1.h1 about
-    h2.h2 about
-    h3.h3 about
-    h4.h4 about
+  header.header
+    
+    +nav-plus-logo 
+    
+    .header__icons-box
+      .header__icon
+        +svg('login')
+      .header__icon
+        +svg('shopping-bag')
+        
+    .row    
+      form.header__search-bar-box
+        input(type='text').header__search-bar-input
+        button(type="submit").header__search-bar-button
+          +svg('search')
+      
+    +section-benefits
+    +section-value-proposition
+    +section-social-proof
+    
+      
+      
+        
