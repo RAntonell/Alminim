@@ -1,0 +1,16 @@
+mixin benefit(icon ,text)
+  .benefit
+    .benefit__icon-box
+      +svg(icon)
+    .p= text
+
+
+mixin section-benefits
+  section.section-benefits
+    .benefits-box
+      .row
+        +benefit('free-shipping', 'Free shipping over 50€')
+        +benefit('24h-delivery', '24 hours delivery')
+        +benefit('easy-return', 'Easy return')
+      
+          

@@ -1,0 +1,13 @@
+mixin commercial(title, collection)
+  .commercial
+    .label.label--white= collection
+    .h2.h2--white= title
+    a(href="javascript:void:0").btn.btn--white Shop Now
+
+mixin section-commercials
+  section.section-commercials
+    .row
+      .commercials-box
+        +commercial('Denim is Back', 'Core')
+        +commercial('Hawaiian Shirts', 'Essentials')
+      
